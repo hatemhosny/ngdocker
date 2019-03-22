@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "distdist/ng-docker/",
+    "public": "dist/ng-docker/",
     "rewrites": [
       {
         "source": "**",
