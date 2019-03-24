@@ -8,14 +8,13 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 ## Storing node modules on a separate layer will prevent unnecessary npm installs at each build
-RUN mkdir /ng-app && mv ./node_modules ./ng-app
+RUN mkdir /frontend && mv ./node_modules ./frontend
 
-WORKDIR /ng-app
+WORKDIR /frontend
 
 COPY . .
 
 RUN npm run ng build -- --prod --output-path=dist
-
 
 ### STAGE 2: Setup ###
 
@@ -28,6 +27,6 @@ COPY nginx/default.conf /etc/nginx/conf.d/
 RUN rm -rf /usr/share/nginx/html/*
 
 ## From ‘builder’ stage copy over the artifacts in dist folder to default nginx public folder
-COPY --from=builder /ng-app/dist /usr/share/nginx/html
+COPY --from=builder /frontend/dist /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
