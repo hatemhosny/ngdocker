@@ -12,6 +12,7 @@ services:
     build: ./frontend
     volumes:
       - ./frontend:/frontend
+      - /frontend/node_modules
     ports:
       - 3001:80
     depends_on:
