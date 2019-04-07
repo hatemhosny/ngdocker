@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!usr/local/bin/python3
 
 from flask import Flask
 from flask_restful import Resource, Api
@@ -14,7 +14,8 @@ class Products(Resource):
         return {
             'products': ['Ice cream',
                          'Chocolate',
-                         'fruit'
+                         'fruits',
+                         'juice'
                          ]
         }
 
@@ -22,4 +23,4 @@ class Products(Resource):
 api.add_resource(Products, '/')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=80, debug=True)
