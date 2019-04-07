@@ -3,11 +3,10 @@ version: '3'
 services:
   backend:
     build: ./backend
-    working_dir: /backend
     volumes:
       - ./backend:/backend
     ports:
-      - 3000:80
+      - 3001:80
 
   frontend:
     build:

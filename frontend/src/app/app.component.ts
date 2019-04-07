@@ -9,7 +9,7 @@ declare var window: any;
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  apiUrl = 'http://' + window.location.hostname + ':3000';
+  apiUrl = 'http://' + window.location.hostname + ':3001';
   products = [];
 
   constructor(private httpClient: HttpClient) {}
