@@ -43,3 +43,9 @@ To rebuild after changes, run:
 To stop and delete both containers, run:
 
 `$ docker-compose -f docker-compose.prod.yml down`
+
+## TODO:
+- Add MongoDB
+- Run tests
+- Continuous integration
+- Continuous Deployment
