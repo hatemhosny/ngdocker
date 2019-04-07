@@ -5,16 +5,18 @@ services:
     build: ./backend
     volumes:
       - ./backend:/backend
-    command: python api.py
     ports:
       - 3000:80
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
     volumes:
       - ./frontend:/frontend
       - /frontend/node_modules
     ports:
-      - 3001:80
+      - 4200:4200
+      - 49153:49153
     depends_on:
       - backend

@@ -22,4 +22,4 @@ class Products(Resource):
 api.add_resource(Products, '/')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, use_reloader=False)
+    app.run(host='0.0.0.0', port=80)
