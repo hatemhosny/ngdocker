@@ -9,15 +9,15 @@ services:
     ports:
       - 3000:80
 
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile.dev
-  #   volumes:
-  #     - ./frontend:/frontend
-  #     - /frontend/node_modules
-  #   ports:
-  #     - 4200:4200
-  #     - 49153:49153
-  #   depends_on:
-  #     - backend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    ports:
+      - 4200:4200
+      - 49153:49153
+    depends_on:
+      - backend
