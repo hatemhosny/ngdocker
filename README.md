@@ -43,3 +43,10 @@ To rebuild after changes, run:
 To stop and delete both containers, run:
 
 `$ docker-compose -f docker-compose.prod.yml down`
+
+## TODO:
+- Serve Flask API in production by Gunicorn
+- Add MongoDB
+- Run tests
+- Continuous integration
+- Continuous Deployment
