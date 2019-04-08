@@ -7,6 +7,10 @@ services:
       - ./backend:/backend
     ports:
       - 3001:80
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
 
   frontend:
     build:
@@ -20,3 +24,12 @@ services:
       - 49153:49153
     depends_on:
       - backend
+  
+  mongodb:
+    image: mongo:latest
+    container_name: "ngdocker_mongodb"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+        - 27017:28017
